@@ -1,0 +1,10 @@
+C:\Users\itali\OneDrive\Documents\GitHub\Connect4\Connect4\bin\Debug\Connect4.exe.config
+C:\Users\itali\OneDrive\Documents\GitHub\Connect4\Connect4\bin\Debug\Connect4.exe
+C:\Users\itali\OneDrive\Documents\GitHub\Connect4\Connect4\bin\Debug\Connect4.pdb
+C:\Users\itali\OneDrive\Documents\GitHub\Connect4\Connect4\obj\Debug\Connect4.csprojAssemblyReference.cache
+C:\Users\itali\OneDrive\Documents\GitHub\Connect4\Connect4\obj\Debug\Connect4.Form1.resources
+C:\Users\itali\OneDrive\Documents\GitHub\Connect4\Connect4\obj\Debug\Connect4.Properties.Resources.resources
+C:\Users\itali\OneDrive\Documents\GitHub\Connect4\Connect4\obj\Debug\Connect4.csproj.GenerateResource.cache
+C:\Users\itali\OneDrive\Documents\GitHub\Connect4\Connect4\obj\Debug\Connect4.csproj.CoreCompileInputs.cache
+C:\Users\itali\OneDrive\Documents\GitHub\Connect4\Connect4\obj\Debug\Connect4.exe
+C:\Users\itali\OneDrive\Documents\GitHub\Connect4\Connect4\obj\Debug\Connect4.pdb
