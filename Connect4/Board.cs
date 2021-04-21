@@ -17,6 +17,7 @@ namespace Connect4
         // Variables.
         public const int row = 6;
         public const int col = 7;
+        public int rowHolder;
         string empty = "O";
         string[,] board = new string[row, col];
         string currentTurn = PLAYER.Yellow.ToString();
@@ -48,16 +49,16 @@ namespace Connect4
 
         public void updateBoard(int _col)
         {
-            int rows = 6;
+            rowHolder = 6;
             if (currentTurn == PLAYER.Yellow.ToString())
             {
-                if (board[rows - 1, col - 1] != empty)
+                if (board[rowHolder - 1, col - 1] != empty)
                 {
-                    rows--;
+                    rowHolder -= 1;
                 }
                 else
                 {
-                    board[rows - 1, col - 1] = currentTurn;
+                    board[rowHolder - 1, col - 1] = currentTurn;
                     Turn();
                 }
             }

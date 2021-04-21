@@ -3,6 +3,8 @@
     "",
     "\\Connect4",
     "\\Connect4\\bin",
+    "\\Connect4\\bin\\Debug",
+    "\\Connect4\\bin\\Release",
     "\\Connect4\\obj",
     "\\Connect4\\Properties"
   ],
