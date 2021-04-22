@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace Connect4
 {
+    public enum PLAYER
+    {
+        Yellow,
+        Red
+    }
     class Board
     {
-        enum PLAYER
-        {
-            Yellow,
-            Red
-        }
 
         // Variables.
         public const int row = 6;
@@ -20,9 +20,9 @@ namespace Connect4
         public int rowHolder;
         string empty = "O";
         string[,] board = new string[row, col];
-        string currentTurn = PLAYER.Yellow.ToString();
+        public string currentTurn = PLAYER.Yellow.ToString();
 
-        public void Turn()
+        public void NextTurn()
         // Checks for current player then switches to the next.
         {
             if (currentTurn == PLAYER.Yellow.ToString())
@@ -47,21 +47,22 @@ namespace Connect4
             }
         }
 
-        public void updateBoard(int _col)
+        public int updateBoard(int _col)
         {
-            rowHolder = 6;
-            if (currentTurn == PLAYER.Yellow.ToString())
-            {
-                if (board[rowHolder - 1, col - 1] != empty)
-                {
-                    rowHolder -= 1;
+            rowHolder = -1;
+            for (int i = 5; i >= 0; i--)
+               {
+                 if (board[i,_col] == empty && i > rowHolder)
+                  {
+                     rowHolder = i;
+                   }
+                 if (rowHolder >= 0)
+                  {
+                      board[rowHolder, _col] = currentTurn;
+                  }
                 }
-                else
-                {
-                    board[rowHolder - 1, col - 1] = currentTurn;
-                    Turn();
-                }
-            }
+            Console.WriteLine(rowHolder);
+            return rowHolder;
         }
     }
 }

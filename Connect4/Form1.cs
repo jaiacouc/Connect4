@@ -14,53 +14,86 @@ namespace Connect4
     {
         Board board = new Board();
 
+        Color[,] bgColors = new Color[6, 7]
+        {
+            {SystemColors.Control, SystemColors.Control, SystemColors.Control , SystemColors.Control , SystemColors.Control , SystemColors.Control , SystemColors.Control  },
+            {SystemColors.Control, SystemColors.Control, SystemColors.Control , SystemColors.Control , SystemColors.Control , SystemColors.Control , SystemColors.Control  },
+            {SystemColors.Control, SystemColors.Control, SystemColors.Control , SystemColors.Control , SystemColors.Control , SystemColors.Control , SystemColors.Control  },
+            {SystemColors.Control, SystemColors.Control, SystemColors.Control , SystemColors.Control , SystemColors.Control , SystemColors.Control , SystemColors.Control  },
+            {SystemColors.Control, SystemColors.Control, SystemColors.Control , SystemColors.Control , SystemColors.Control , SystemColors.Control , SystemColors.Control  },
+            {SystemColors.Control, SystemColors.Control, SystemColors.Control , SystemColors.Control , SystemColors.Control , SystemColors.Control , SystemColors.Control  }
+        };
+
+        public void setColor(int _col)
+        {
+            int row = board.updateBoard(_col);
+
+
+                if (board.currentTurn == PLAYER.Yellow.ToString())
+                {
+                    bgColors[row, _col] = Color.Yellow;
+                    tableLayoutPanel1.Refresh();
+                    board.NextTurn();
+                }
+                else
+                {
+                    bgColors[row, _col] = Color.Red;
+                    tableLayoutPanel1.Refresh();
+                    board.NextTurn();
+                }
+            
+        }
         public Form1()
         {
             InitializeComponent();
+            board.initializeBoard();
         }
 
         private void quitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
-        private void tableLayoutPanel1_CellPaint(object sender, TableLayoutCellPaintEventArgs e)
-        {
-
-        }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            board.updateBoard(1);
+            setColor(0);
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            board.updateBoard(2);
+            setColor(1);
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            board.updateBoard(3);
+            setColor(2);
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            board.updateBoard(4);
+            setColor(3);
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            board.updateBoard(5);
+            setColor(4);
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            board.updateBoard(6);
+            setColor(5);
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
-            board.updateBoard(7);
+            setColor(6);
+        }
+        private void tableLayoutPanel1_CellPaint(object sender, TableLayoutCellPaintEventArgs e)
+        {
+            using (var b = new SolidBrush(bgColors[e.Row, e.Column]))
+            {
+                e.Graphics.FillRectangle(b, e.CellBounds);
+            }
         }
     }
 }
