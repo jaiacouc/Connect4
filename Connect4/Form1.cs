@@ -25,13 +25,12 @@ namespace Connect4
         };
         public void win()
         {
-            string message = "You Win!" + board.currentTurn;
             board.checkWin();
             if (board.win == true)
             {
                 Form2 form = new Form2();
                 this.Visible = false;
-                form.Show();
+                form.ShowDialog();
                 System.Windows.Forms.Application.Exit();
             }
         }
@@ -110,6 +109,15 @@ namespace Connect4
             {
                 e.Graphics.FillRectangle(b, e.CellBounds);
             }
+        }
+
+        private void newGameToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            board.resetGame();
+            Form3 form = new Form3();
+            this.Visible = false;
+            form.ShowDialog();
+            System.Windows.Forms.Application.Exit();
         }
     }
 }

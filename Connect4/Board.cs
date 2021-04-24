@@ -113,5 +113,12 @@ namespace Connect4
             }
         }
 
+        public void resetGame()
+        {
+            initializeBoard();
+            currentTurn = PLAYER.Yellow.ToString();
+            win = false;
+        }
+
     }
 }
