@@ -8,3 +8,4 @@ C:\Users\itali\OneDrive\Documents\GitHub\Connect4\Connect4\obj\Debug\Connect4.cs
 C:\Users\itali\OneDrive\Documents\GitHub\Connect4\Connect4\obj\Debug\Connect4.csproj.CoreCompileInputs.cache
 C:\Users\itali\OneDrive\Documents\GitHub\Connect4\Connect4\obj\Debug\Connect4.exe
 C:\Users\itali\OneDrive\Documents\GitHub\Connect4\Connect4\obj\Debug\Connect4.pdb
+C:\Users\itali\OneDrive\Documents\GitHub\Connect4\Connect4\obj\Debug\Connect4.Form2.resources

@@ -21,6 +21,7 @@ namespace Connect4
         string empty = "O";
         string[,] board = new string[row, col];
         public string currentTurn = PLAYER.Yellow.ToString();
+        public bool win = false;
 
         public void NextTurn()
         // Checks for current player then switches to the next.
@@ -61,8 +62,56 @@ namespace Connect4
                       board[rowHolder, _col] = currentTurn;
                   }
                 }
-            Console.WriteLine(rowHolder);
             return rowHolder;
         }
+
+        public void checkWin()
+        {
+            //check veritcal win
+            for(int i = 0; i < row - 3; i++)
+            {
+                for(int j = 0; j < col; j++)
+                {
+                    if(board[i,j] == currentTurn && board[i+1,j] == currentTurn && board[i+2,j] == currentTurn && board[i+3,j] == currentTurn)
+                    {
+                        win = true;
+                    }
+                }
+            }
+            // Horizontal Win
+            for (int i = 0; i < row; i++)
+            {
+                for (int j = 0; j < col - 3; j++)
+                {
+                    if (board[i, j] == currentTurn && board[i, j+1] == currentTurn && board[i, j+2] == currentTurn && board[i, j+3] == currentTurn)
+                    {
+                        win = true;
+                    }
+                }
+            }
+            //Down diagonal win
+            for (int i = 0; i <= row-4; i++)
+            {
+                for (int j = 0; j <= col-4; j++)
+                {
+                    if (board[i, j] == currentTurn && board[i+1, j + 1] == currentTurn && board[i+2, j + 2] == currentTurn && board[i+3, j + 3] == currentTurn)
+                    {
+                        win = true;
+                    }
+                }
+            }
+            // up diagonal win
+            for (int i = 3; i <= row-1; i++)
+            {
+                for (int j = 0; j <= col-4; j++)
+                {
+                    if (board[i, j] == currentTurn && board[i-1, j + 1] == currentTurn && board[i-2, j + 2] == currentTurn && board[i-3, j + 3] == currentTurn)
+                    {
+                        win = true;
+                    }
+                }
+            }
+        }
+
     }
 }

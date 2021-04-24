@@ -23,25 +23,41 @@ namespace Connect4
             {SystemColors.Control, SystemColors.Control, SystemColors.Control , SystemColors.Control , SystemColors.Control , SystemColors.Control , SystemColors.Control  },
             {SystemColors.Control, SystemColors.Control, SystemColors.Control , SystemColors.Control , SystemColors.Control , SystemColors.Control , SystemColors.Control  }
         };
+        public void win()
+        {
+            string message = "You Win!" + board.currentTurn;
+            board.checkWin();
+            if (board.win == true)
+            {
+                Form2 form = new Form2();
+                this.Visible = false;
+                form.Show();
+                System.Windows.Forms.Application.Exit();
+            }
+        }
 
         public void setColor(int _col)
         {
             int row = board.updateBoard(_col);
 
-
+            if (row >= 0)
+            {
                 if (board.currentTurn == PLAYER.Yellow.ToString())
                 {
                     bgColors[row, _col] = Color.Yellow;
                     tableLayoutPanel1.Refresh();
+                    win();
                     board.NextTurn();
+                    
                 }
                 else
                 {
                     bgColors[row, _col] = Color.Red;
                     tableLayoutPanel1.Refresh();
+                    win();
                     board.NextTurn();
                 }
-            
+            }
         }
         public Form1()
         {
